@@ -11,6 +11,11 @@ export const updateCourse = async (courseId, course) => {
     return await response.json()
 }
 
+export const findCourseById = async (courseId) => {
+    const response = await fetch(`${API_URL}/${courseId}`)
+    return await response.json()
+}
+
 export const deleteCourse = async (courseId) => {
     const response = await fetch(`${API_URL}/${courseId}`, {
         method: 'DELETE'

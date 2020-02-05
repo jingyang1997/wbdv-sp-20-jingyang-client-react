@@ -8,7 +8,8 @@ class CourseCard extends React.Component{
     }
     state = {
         editing: false,
-        course: this.props.course
+        course: this.props.course,
+        currID: this.props.course._id
     }
     render(){
         return(
@@ -55,8 +56,9 @@ class CourseCard extends React.Component{
                     </div>
                     <div className="inner">
                     <button onClick={(e) => {
-                        updateCourse(this.state.course._id, this.state.course).then(status => {})
+                        updateCourse(this.state.currID, this.state.course).then(status => {})
                         this.setState({
+                            currID: this.state.course._id,
                             editing: false
                         })
                     }}>

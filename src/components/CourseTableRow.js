@@ -10,7 +10,8 @@ class CourseTableRow extends React.Component {
 
     state = {
         editing: false,
-        course: this.props.course
+        course: this.props.course,
+        currID: this.props.course._id
     }
 
     render() {
@@ -52,14 +53,19 @@ class CourseTableRow extends React.Component {
                     </button>
                 </div>
                 <div className="inner">
-                <button onClick={() => this.setState({editing: true})}>
+                <button 
+                    onClick={() => {
+                        this.setState({editing: true
+                        })
+                    }}>
                     <i className="fa fa-pencil"></i>
                 </button>
                 </div>
                 <div className="inner">
                 <button onClick={(e) => {
-                    updateCourse(this.state.course._id, this.state.course).then(status => {})
+                    updateCourse(this.state.currID, this.state.course).then(status => {})
                     this.setState({
+                        currID: this.state.course._id,
                         editing: false
                     })
                 }}>

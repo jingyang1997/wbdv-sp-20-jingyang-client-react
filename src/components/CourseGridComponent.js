@@ -1,6 +1,7 @@
 import React from "react";
 import CourseCard from './CourseCard'
 import './style.css'
+import './gridstyle.css'
 
 const CourseGridComponent = ({toggle, courses, deleteCourse, showCourseEditor}) =>
     <div className="container-fluid">
@@ -28,7 +29,7 @@ const CourseGridComponent = ({toggle, courses, deleteCourse, showCourseEditor}) 
           </tr>
         </thead>
         </table>
-        <div>
+        <div class="cards">
         {courses.map(function(course, index) {
             return <CourseCard
                         showCourseEditor={showCourseEditor}
