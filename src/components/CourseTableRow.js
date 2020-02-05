@@ -1,7 +1,7 @@
 import React from "react";
 import {updateCourse} from "../services/CourseService";
-import './style.css'
-import './tablestyle.css'
+import '../css/style.css'
+import '../css/tablestyle.css'
 
 class CourseTableRow extends React.Component {
     constructor(props) {
