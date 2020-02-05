@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 
 function App() {
   return (
@@ -22,5 +23,11 @@ function App() {
     </div>
   );
 }
+=======
+import CourseManagerComponent from "./components/CourseManagerComponent";
+
+const App = () =>
+    <CourseManagerComponent/>
+>>>>>>> 8891458004531eccf6ab7117dafe673ffd9d000c
 
 export default App;
