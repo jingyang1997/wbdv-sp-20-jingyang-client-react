@@ -1,5 +1,7 @@
 import React from "react";
 import {updateCourse} from "../services/CourseService";
+import './style.css'
+import './tablestyle.css'
 
 class CourseTableRow extends React.Component {
     constructor(props) {
@@ -13,7 +15,10 @@ class CourseTableRow extends React.Component {
 
     render() {
         return(
-            <li>
+            <tr className="wbdv-row wbdv-course">
+            <td>
+                <span className="wbdv-row wbdv-icon"><i className="fa fa-fw fa-file"></i></span>
+                <span className="wbdv-row wbdv-title">
                 {   !this.state.editing &&
                 <a href="#" onClick={this.props.showCourseEditor}>
                     {this.state.course.title}
@@ -24,21 +29,46 @@ class CourseTableRow extends React.Component {
                     <input
                         onChange={(e) => this.setState({
                             course: {
-                                ...this.state.course,
                                 title: e.target.value
                             }
                         })}
                         value={this.state.course.title}/>
                 }
-                <button onClick={() => this.props.deleteCourse(this.props.course)}>Delete</button>
-                <button onClick={() => this.setState({editing: true})}>Edit</button>
+                </span>
+            </td>
+            <td className="wbdv-small">
+              <span className="wbdv-row wbdv-owner">me</span>
+            </td>
+            <td className="wbdv-middle">
+              <span className="wbdv-row">
+                  <time>2/5/2020</time>
+              </span>
+            </td>
+            <td>
+                <div id="out">
+                <div className="inner">
+                    <button onClick={() => this.props.deleteCourse(this.props.course)}>
+                        <i className="fa fa-trash"></i>
+                    </button>
+                </div>
+                <div className="inner">
+                <button onClick={() => this.setState({editing: true})}>
+                    <i className="fa fa-pencil"></i>
+                </button>
+                </div>
+                <div className="inner">
                 <button onClick={(e) => {
                     updateCourse(this.state.course._id, this.state.course).then(status => {})
                     this.setState({
                         editing: false
                     })
-                }}>Save</button>
-            </li>
+                }}>
+                    <i className="fa fa-save"></i>
+                </button>
+                </div>
+                </div>
+            </td>
+            </tr>
         )
     }
 }

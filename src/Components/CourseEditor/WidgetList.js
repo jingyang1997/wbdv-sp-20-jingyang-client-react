@@ -1,13 +1,13 @@
 import React from "react";
-import ModuleListItem from "./ModuleListItem";
+import WidgetListItem from './WidgetListItem'
 
-const ModuleList = ({modules}) =>
+const WidgetList = ({widgets}) =>
     <ul className="list-group">
         {
-            modules.map(module =>
-                <ModuleListItem
-                    key={module._id}
-                    module={module}/>
+            widgets.map(widget =>
+                <WidgetListItem
+                    key={widget._id}
+                    widget={widget}/>
             )
         }
         <li className="list-group-item">
@@ -17,4 +17,4 @@ const ModuleList = ({modules}) =>
         </li>
     </ul>
 
-export default ModuleList
+export default WidgetList
