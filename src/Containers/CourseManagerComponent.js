@@ -1,5 +1,4 @@
 import React from "react";
-import CourseManagerHeading from "../Components/CourseManagerHeading";
 import CourseTableComponent from "./CourseTableComponent";
 import CourseGridComponent from "./CourseGridComponent";
 import CourseEditor from "../Components/CourseEditor/CourseEditor";
@@ -98,7 +97,7 @@ class CourseManagerComponent extends React.Component {
                 }
                 {!this.state.editingCourse &&
                     <div>
-                        <CourseManagerHeading/>
+                        
                         <div>
                             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                             <div>
